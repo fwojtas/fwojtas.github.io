@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Top Tracks with Vue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .track-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .track-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .track-item span {
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #1DB954;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #14833b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Your Top 15 Spotify Tracks</h1>
+        <button @click="fetchTopTracks(); sendChatGPTMessage()">Get Your Top Tracks</button>
+        <span> {{chatResponse}}</span>
+
+        <ul v-if="tracks.length > 0" class="track-list">
+            <li v-for="(track, index) in tracks" :key="track.id" class="track-item">
+                <span>{{ index + 1 }}. {{ track.name }}</span><br>
+                <em>by {{ track.artists }}</em>
+            </li>
+        </ul>
+        <p v-else>No tracks found or not yet loaded.</p>
+    </div>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="SpotfiyAppScript.js"></script>
+    <!-- Markdown-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</body>
+
+</html>
