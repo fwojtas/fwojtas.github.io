@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS (optional) -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="headerimg">
+        <img src="Headerimg.png">
+    </div>
+    <div id="app" class="container mt-5">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="projects-tab" data-toggle="tab" href="#projects" role="tab">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Contact</a>
+            </li>
+        </ul>
+        <!-- Tab Content -->
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <div v-html="homeContent"></div>
+            </div>
+            <div class="tab-pane fade" id="about" role="tabpanel">
+                <div v-html="aboutContent"></div>
+            </div>
+            <div class="tab-pane fade" id="projects" role="tabpanel">
+                <div v-html="projectsContent"></div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel">
+                <div v-html="contactContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+    <!-- Markdown-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</body>
+
+</html>
