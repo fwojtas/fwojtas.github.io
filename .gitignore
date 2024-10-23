@@ -1,0 +1,5 @@
+SpotfiyApp.html
+SpotfiyAppscript.js
+# Ignore configuration files containing secrets
+*.env
+config.js
